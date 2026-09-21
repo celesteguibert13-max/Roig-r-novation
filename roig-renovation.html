@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Version fusionnée | Roig Rénovation | Rénovation intérieure à Marseille et alentours</title>
+<meta name="description" content="Pose de sol, peinture, placo, montage de meubles et dépannage électricité plomberie. Artisan assuré, devis gratuit, un seul interlocuteur du premier appel à la dernière finition.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blanc:#F7F6F2;
+  --platre:#DDD6C9;
+  --platre-2:#CFC6B6;
+  --chene:#9A6A3E;
+  --chene-2:#7A5230;
+  --vert:#2C4A3F;
+  --vert-2:#1F3830;
+  --charbon:#23261F;
+  --gris:#6B6E64;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Figtree',system-ui,sans-serif;
+  --maxw:1240px;
+  --gutter:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--charbon);background:var(--blanc);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.02;letter-spacing:-.02em}
+h2{font-size:clamp(34px,4.6vw,60px)}
+h3{font-size:clamp(22px,2.2vw,28px);font-weight:700}
+p{max-width:60ch}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:6px;font-weight:600;font-size:16px;border:2px solid transparent;transition:transform .15s,background .2s}
+.btn:active{transform:translateY(1px)}
+.btn-vert{background:var(--vert);color:#fff}
+.btn-vert:hover{background:var(--vert-2)}
+.btn-ghost{border-color:var(--charbon);color:var(--charbon);background:transparent}
+.btn-ghost:hover{background:var(--charbon);color:#fff}
+.btn svg{width:18px;height:18px;flex:none}
+:focus-visible{outline:3px solid var(--chene);outline-offset:3px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,246,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(35,38,31,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+.brand{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.brand i{width:14px;height:14px;background:var(--vert);border-radius:2px;display:inline-block;transform:rotate(45deg)}
+.nav ul{display:flex;gap:28px;list-style:none;font-weight:500;font-size:15px}
+.nav ul a{opacity:.8}
+.nav ul a:hover{opacity:1}
+.nav .tel{font-weight:600;font-size:15px}
+.nav .btn{padding:11px 16px;font-size:15px}
+@media(max-width:900px){.nav ul,.nav .tel{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--platre)}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse at 20% 30%,rgba(255,255,255,.35),transparent 55%),
+  radial-gradient(ellipse at 80% 70%,rgba(0,0,0,.06),transparent 50%),
+  repeating-linear-gradient(115deg,rgba(0,0,0,.025) 0 2px,transparent 2px 7px);
+  pointer-events:none}
+.hero .paint{position:absolute;inset:0;background:var(--vert);
+  clip-path:polygon(0 0,0 0,0 100%,0 100%);
+  animation:roll 1.5s cubic-bezier(.7,0,.2,1) .35s forwards}
+@keyframes roll{to{clip-path:polygon(0 0,62% 0,54% 100%,0 100%)}}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;min-height:calc(100vh - 74px);align-items:center;padding-top:72px;padding-bottom:72px}
+.hero h1{font-size:clamp(46px,7vw,104px);color:#fff;font-weight:800;opacity:0;animation:fade .6s ease 1.1s forwards}
+.hero h1 span{display:block}
+.hero .lead{color:#fff;opacity:0;animation:fade .6s ease 1.4s forwards;margin-top:26px;font-size:clamp(17px,1.4vw,20px);max-width:44ch}
+.hero .lead strong{font-weight:600}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;opacity:0;animation:fade .6s ease 1.6s forwards}
+.hero .btn-vert{background:#fff;color:var(--vert)}
+.hero .btn-vert:hover{background:var(--blanc)}
+.hero .btn-ghost{border-color:#fff;color:#fff}
+.hero .btn-ghost:hover{background:#fff;color:var(--vert)}
+@keyframes fade{to{opacity:1}}
+.swatches{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-self:center}
+.sw{aspect-ratio:1;border-radius:8px;position:relative;overflow:hidden;box-shadow:0 20px 40px -20px rgba(35,38,31,.45)}
+.sw span{position:absolute;left:14px;bottom:12px;font-size:13px;font-weight:600;background:rgba(247,246,242,.9);padding:5px 9px;border-radius:4px}
+.sw.parquet{background:
+  linear-gradient(135deg,var(--chene) 25%,transparent 25%) 0 0/60px 60px,
+  linear-gradient(225deg,var(--chene-2) 25%,transparent 25%) 0 0/60px 60px,
+  linear-gradient(315deg,var(--chene) 25%,transparent 25%) 0 0/60px 60px,
+  linear-gradient(45deg,var(--chene-2) 25%,#B07B4B 25%) 0 0/60px 60px}
+.sw.peinture{background:linear-gradient(160deg,#3C5E52,var(--vert) 60%,var(--vert-2))}
+.sw.peinture::after{content:"";position:absolute;inset:auto -10% 22% -10%;height:34%;background:var(--blanc);transform:rotate(-6deg);opacity:.95}
+.sw.platre{background:var(--platre-2);background-image:repeating-linear-gradient(0deg,transparent 0 23px,rgba(0,0,0,.08) 23px 24px),repeating-linear-gradient(90deg,transparent 0 47px,rgba(0,0,0,.08) 47px 48px)}
+.sw.platre::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.35),transparent 40%)}
+.sw.carreau{background:var(--blanc);background-image:linear-gradient(var(--vert) 1px,transparent 1px),linear-gradient(90deg,var(--vert) 1px,transparent 1px);background-size:36px 36px;background-position:-1px -1px}
+.sw.carreau::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;background:var(--vert);clip-path:polygon(0 100%,100% 100%,100% 0,0 45%)}
+.trust{position:relative;border-top:1px solid rgba(35,38,31,.12);background:var(--blanc)}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:0;padding:0}
+.trust div{flex:1 1 200px;padding:22px var(--gutter);font-weight:500;font-size:15px;border-right:1px solid rgba(35,38,31,.12);display:flex;align-items:center;gap:12px}
+.trust div:last-child{border-right:0}
+.trust b{font-family:var(--display);font-size:24px;font-weight:800;color:var(--vert)}
+@media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;min-height:0;padding-top:56px}
+  .hero .paint{animation:rollm 1.5s cubic-bezier(.7,0,.2,1) .35s forwards}
+  @keyframes rollm{to{clip-path:polygon(0 0,100% 0,100% 62%,0 70%)}}
+  .swatches{grid-template-columns:repeat(4,1fr);gap:10px}
+  .sw span{display:none}
+}
+
+
+/* estimateur */
+.estim{background:var(--blanc);border-bottom:1px solid rgba(35,38,31,.12)}
+.estim .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+.estim h2{margin-bottom:16px}
+.estim .lead{color:var(--gris);font-size:18px}
+.estim .lead b{color:var(--charbon);font-weight:600}
+.box{background:#fff;border:1px solid rgba(35,38,31,.12);border-radius:12px;padding:30px;box-shadow:0 30px 60px -40px rgba(35,38,31,.4)}
+.box .q{font-weight:600;font-size:15px;margin:0 0 10px}
+.box .q+.q{margin-top:22px}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:22px}
+.chips label{cursor:pointer;position:relative}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:block;padding:12px 10px;border:2px solid rgba(35,38,31,.15);border-radius:8px;text-align:center;font-weight:500;font-size:14px;background:var(--blanc);transition:.15s}
+.chips input:checked+span{border-color:var(--vert);background:#E9EFEC;color:var(--vert-2)}
+.chips input:focus-visible+span{outline:3px solid var(--chene);outline-offset:2px}
+.slide{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.slide input{flex:1;accent-color:var(--vert)}
+.slide output{font-family:var(--display);font-weight:800;font-size:22px;min-width:76px;text-align:right}
+.recap{padding:16px 18px;background:var(--platre);border-radius:8px;font-size:15px;margin-bottom:16px}
+.recap small{display:block;color:var(--gris);font-size:13px;margin-bottom:4px}
+.box .btn{width:100%;justify-content:center;padding:16px}
+.box .fine{font-size:13px;color:var(--gris);text-align:center;margin-top:12px}
+@media(max-width:900px){.estim .wrap{grid-template-columns:1fr;gap:32px}.chips{grid-template-columns:repeat(2,1fr)}}
+
+/* sections */
+section{padding:clamp(72px,9vw,128px) 0}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:56px}
+.intro p{font-size:clamp(17px,1.3vw,20px);color:var(--gris)}
+@media(max-width:900px){.intro{grid-template-columns:1fr;gap:20px}}
+
+/* prestations */
+.prestas{border-top:1px solid rgba(35,38,31,.12)}
+.presta{display:grid;grid-template-columns:110px 1fr 1.2fr;gap:32px;align-items:center;padding:34px 0;border-bottom:1px solid rgba(35,38,31,.12)}
+.presta .mat{width:110px;height:110px;border-radius:8px;position:relative;overflow:hidden}
+.presta h3{margin-bottom:0}
+.presta p{color:var(--gris);font-size:16px}
+.presta .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.presta .tags span{font-size:13px;padding:5px 10px;border:1px solid rgba(35,38,31,.2);border-radius:999px;color:var(--charbon)}
+.mat.m-sol{background:
+  linear-gradient(135deg,var(--chene) 25%,transparent 25%) 0 0/34px 34px,
+  linear-gradient(225deg,var(--chene-2) 25%,transparent 25%) 0 0/34px 34px,
+  linear-gradient(315deg,var(--chene) 25%,transparent 25%) 0 0/34px 34px,
+  linear-gradient(45deg,var(--chene-2) 25%,#B07B4B 25%) 0 0/34px 34px}
+.mat.m-peinture{background:var(--platre-2)}
+.mat.m-peinture::after{content:"";position:absolute;inset:0 0 0 0;background:var(--vert);clip-path:polygon(0 0,58% 0,48% 100%,0 100%)}
+.mat.m-placo{background:var(--platre);background-image:linear-gradient(rgba(35,38,31,.18) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(35,38,31,.18) 1.5px,transparent 1.5px);background-size:22px 22px}
+.mat.m-placo::after{content:"";position:absolute;top:30%;left:0;right:0;height:3px;background:var(--chene)}
+.mat.m-meuble{background:#EDE7DA}
+.mat.m-meuble::before{content:"";position:absolute;inset:18px;border:3px solid var(--charbon);border-radius:3px}
+.mat.m-meuble::after{content:"";position:absolute;left:18px;right:18px;top:50%;height:3px;background:var(--charbon)}
+.mat.m-depan{background:var(--charbon)}
+.mat.m-depan::before{content:"";position:absolute;left:50%;top:14px;bottom:14px;width:3px;background:#fff;transform:translateX(-50%)}
+.mat.m-depan::after{content:"";position:absolute;left:50%;top:50%;width:26px;height:26px;border:3px solid var(--chene);border-radius:50%;transform:translate(-50%,-50%);background:var(--charbon)}
+@media(max-width:800px){.presta{grid-template-columns:72px 1fr;gap:18px}.presta .mat{width:72px;height:72px}.presta p{grid-column:2}}
+
+/* avant apres */
+.aa{background:var(--charbon);color:#fff}
+.aa .intro p{color:rgba(255,255,255,.7)}
+.slider{position:relative;width:100%;aspect-ratio:16/8;border-radius:10px;overflow:hidden;user-select:none;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.slider .face{position:absolute;inset:0}
+.face.avant{background:#B9AE9C;background-image:
+  radial-gradient(ellipse at 60% 40%,rgba(0,0,0,.12),transparent 40%),
+  repeating-linear-gradient(0deg,transparent 0 40px,rgba(0,0,0,.08) 40px 41px),
+  repeating-linear-gradient(90deg,transparent 0 60px,rgba(0,0,0,.08) 60px 61px)}
+.face.avant::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:#8C8378;background-image:repeating-linear-gradient(90deg,transparent 0 120px,rgba(0,0,0,.15) 120px 122px)}
+.face.apres{background:var(--vert);clip-path:inset(0 0 0 var(--x,50%))}
+.face.apres::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.14),transparent 50%)}
+.face.apres::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:
+  linear-gradient(135deg,var(--chene) 25%,transparent 25%) 0 0/70px 70px,
+  linear-gradient(225deg,var(--chene-2) 25%,transparent 25%) 0 0/70px 70px,
+  linear-gradient(315deg,var(--chene) 25%,transparent 25%) 0 0/70px 70px,
+  linear-gradient(45deg,var(--chene-2) 25%,#B07B4B 25%) 0 0/70px 70px}
+.slider .plinthe{position:absolute;left:0;right:0;bottom:34%;height:12px;background:var(--blanc);clip-path:inset(0 0 0 var(--x,50%))}
+.slider .handle{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;background:#fff;transform:translateX(-1px);pointer-events:none}
+.slider .handle i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#fff;color:var(--charbon);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.slider input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.slider .lab{position:absolute;bottom:18px;font-size:13px;font-weight:600;padding:6px 10px;border-radius:4px;background:rgba(35,38,31,.75);color:#fff}
+.slider .lab.l{left:18px}.slider .lab.r{right:18px}
+.slider .note{position:absolute;top:18px;left:18px;font-size:13px;color:rgba(255,255,255,.85);background:rgba(35,38,31,.55);padding:6px 10px;border-radius:4px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:14px;margin-top:40px}
+.gallery div{border-radius:8px;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.25);display:grid;place-items:center;font-size:13px;color:rgba(255,255,255,.6);text-align:center;padding:10px}
+.gallery div:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gallery div:nth-child(4){grid-row:span 2}
+@media(max-width:800px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}.gallery div:nth-child(1){grid-column:span 2}}
+
+/* methode */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--charbon)}
+.step{padding:34px 28px 34px 0;border-right:1px solid rgba(35,38,31,.12)}
+.step:last-child{border-right:0}
+.step:not(:first-child){padding-left:28px}
+.step b{display:block;font-family:var(--display);font-size:52px;font-weight:800;color:var(--platre-2);line-height:1;margin-bottom:22px}
+.step h3{margin-bottom:12px}
+.step p{color:var(--gris);font-size:16px}
+@media(max-width:800px){.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid rgba(35,38,31,.12);padding-left:0!important}}
+
+/* zone + avis */
+.zone{background:var(--platre);}
+.zone .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.villes{columns:2;column-gap:32px;list-style:none;font-size:17px;line-height:2}
+.villes li{break-inside:avoid;border-bottom:1px solid rgba(35,38,31,.15)}
+.avis{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.avis blockquote{background:var(--blanc);padding:26px;border-radius:8px;border-left:4px solid var(--vert)}
+.avis blockquote p{font-size:16px}
+.avis footer{margin-top:16px;font-size:14px;color:var(--gris);font-weight:500}
+.stars{color:var(--chene);letter-spacing:2px;font-size:15px;margin-bottom:12px}
+@media(max-width:900px){.zone .grid,.avis{grid-template-columns:1fr}.villes{columns:1}}
+
+/* contact */
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact h2{margin-bottom:22px}
+.contact .ways{display:grid;gap:14px;margin-top:32px}
+.way{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid rgba(35,38,31,.15);border-radius:8px;background:#fff}
+.way:hover{border-color:var(--charbon)}
+.way .ic{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;flex:none;background:var(--vert);color:#fff}
+.way .ic svg{width:22px;height:22px}
+.way b{display:block;font-weight:600}
+.way small{color:var(--gris);font-size:14px}
+form{display:grid;gap:14px;background:#fff;padding:32px;border-radius:10px;border:1px solid rgba(35,38,31,.12)}
+label{display:grid;gap:6px;font-size:14px;font-weight:600}
+input,select,textarea{font:inherit;padding:13px 14px;border:1.5px solid rgba(35,38,31,.2);border-radius:6px;background:var(--blanc);width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--vert);outline:none;background:#fff}
+textarea{min-height:120px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form small{color:var(--gris);font-size:13px}
+@media(max-width:900px){.contact .grid{grid-template-columns:1fr;gap:36px}.row{grid-template-columns:1fr}}
+
+/* footer */
+footer.site{background:var(--charbon);color:rgba(255,255,255,.75);padding:48px 0;font-size:14px}
+footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+footer.site .brand{color:#fff}
+footer.site a:hover{color:#fff}
+footer.site ul{list-style:none;display:flex;gap:22px;flex-wrap:wrap}
+
+/* sticky mobile bar */
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:1px;background:var(--charbon)}
+.mbar a{flex:1;text-align:center;padding:16px;font-weight:600;color:#fff;background:var(--vert)}
+.mbar a.tel{background:var(--charbon)}
+@media(max-width:900px){.mbar{display:flex}body{padding-bottom:58px}}
+
+@media(prefers-reduced-motion:reduce){
+  .hero .paint{animation:none;clip-path:polygon(0 0,62% 0,54% 100%,0 100%)}
+  .hero h1,.hero .lead,.hero .cta{animation:none;opacity:1}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#"><i></i>Roig Rénovation</a>
+    <ul>
+      <li><a href="#prestations">Prestations</a></li>
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#methode">Comment ça se passe</a></li>
+      <li><a href="#zone">Zone d'intervention</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="tel" href="tel:+33600000000">06 00 00 00 00</a>
+    <a class="btn btn-vert" href="#contact">Demander un devis</a>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="paint" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <h1><span>Des sols,</span><span>des murs,</span><span>des finitions</span><span>qui tiennent.</span></h1>
+      <p class="lead">Rénovation intérieure à Marseille et alentours. <strong>Pose de sol, peinture, placo, montage de meubles</strong>, et dépannage électricité et plomberie. Un seul artisan, du premier appel à la dernière finition.</p>
+      <div class="cta">
+        <a class="btn btn-vert" href="https://wa.me/33600000000?text=Bonjour%2C%20je%20souhaite%20vous%20envoyer%20des%20photos%20de%20mon%20projet.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4.1c1.7.7 2.4.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
+          Envoyer mes photos sur WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="tel:+33600000000">Appeler maintenant</a>
+      </div>
+    </div>
+    <div class="swatches" aria-hidden="true">
+      <div class="sw parquet"><span>Pose de sol</span></div>
+      <div class="sw peinture"><span>Peinture</span></div>
+      <div class="sw platre"><span>Placo</span></div>
+      <div class="sw carreau"><span>Finitions</span></div>
+    </div>
+  </div>
+  <div class="trust">
+    <div class="wrap">
+      <div><b>0 €</b> Le devis, après visite sur place</div>
+      <div><b>1</b> Interlocuteur, le même du début à la fin</div>
+      <div><b>48 h</b> Pour vous rappeler après votre message</div>
+      <div><b>RC Pro</b> Artisan assuré, attestation sur demande</div>
+    </div>
+  </div>
+</section>
+
+<section class="estim" id="estimer"><div class="wrap">
+  <div>
+    <h2>Décrivez votre projet en 30 secondes.</h2>
+    <p class="lead">Choisissez le type de travaux et la surface concernée. Votre demande arrive <b>déjà rédigée sur WhatsApp</b>, il ne reste qu'à joindre vos photos. Le devis précis suit la visite sur place.</p>
+  </div>
+  <form class="box" onsubmit="event.preventDefault()">
+    <div class="q">Type de travaux</div>
+    <div class="chips" id="typ">
+      <label><input type="radio" name="t" value="Pose de sol" checked><span>Pose de sol</span></label>
+      <label><input type="radio" name="t" value="Peinture"><span>Peinture</span></label>
+      <label><input type="radio" name="t" value="Placo et cloisons"><span>Placo</span></label>
+      <label><input type="radio" name="t" value="Montage de meubles"><span>Meubles</span></label>
+      <label><input type="radio" name="t" value="Dépannage"><span>Dépannage</span></label>
+      <label><input type="radio" name="t" value="Plusieurs travaux"><span>Plusieurs</span></label>
+    </div>
+    <div class="q">Surface ou pièces concernées</div>
+    <div class="slide"><input type="range" id="surf" min="5" max="150" value="30" aria-label="Surface approximative"><output id="surfOut">30 m²</output></div>
+    <div class="q">Délai souhaité</div>
+    <div class="chips" id="del">
+      <label><input type="radio" name="d" value="dès que possible" checked><span>Dès que possible</span></label>
+      <label><input type="radio" name="d" value="dans 1 à 3 mois"><span>1 à 3 mois</span></label>
+      <label><input type="radio" name="d" value="sans contrainte"><span>Sans contrainte</span></label>
+    </div>
+    <div class="recap"><small>Votre message</small><span id="recap"></span></div>
+    <a class="btn btn-vert" id="waBtn" href="#">Envoyer sur WhatsApp avec mes photos</a>
+    <div class="fine">Aucune donnée n'est enregistrée sur ce site.</div>
+  </form>
+</div></section>
+
+<section id="prestations">
+  <div class="wrap">
+    <div class="intro">
+      <h2>Cinq prestations, réalisées par l'artisan lui-même.</h2>
+      <p>Un périmètre volontairement précis : cinq métiers pratiqués au quotidien chez des particuliers, avec le matériel adapté et des finitions soignées.</p>
+    </div>
+    <div class="prestas">
+      <article class="presta">
+        <div class="mat m-sol" aria-hidden="true"></div>
+        <div><h3>Pose de sol</h3></div>
+        <div><p>Parquet stratifié, contrecollé ou massif, vinyle, sol souple. Préparation du support, pose, plinthes et barres de seuil. Hors carrelage.</p>
+          <div class="tags"><span>Parquet</span><span>Stratifié</span><span>Vinyle</span><span>Plinthes</span></div></div>
+      </article>
+      <article class="presta">
+        <div class="mat m-peinture" aria-hidden="true"></div>
+        <div><h3>Peinture</h3></div>
+        <div><p>Murs, plafonds, boiseries. Rebouchage, ponçage, sous-couche et deux couches de finition. Conseil sur les teintes et les finitions mates ou satinées.</p>
+          <div class="tags"><span>Murs et plafonds</span><span>Boiseries</span><span>Rebouchage</span></div></div>
+      </article>
+      <article class="presta">
+        <div class="mat m-placo" aria-hidden="true"></div>
+        <div><h3>Placo et cloisons</h3></div>
+        <div><p>Création de cloisons, doublage, faux plafonds, niches et coffrages. Bandes et enduit prêts à peindre.</p>
+          <div class="tags"><span>Cloisons</span><span>Doublage</span><span>Faux plafond</span></div></div>
+      </article>
+      <article class="presta">
+        <div class="mat m-meuble" aria-hidden="true"></div>
+        <div><h3>Montage de meubles</h3></div>
+        <div><p>Cuisines en kit, dressings, bibliothèques, meubles de salle de bain. Montage, fixation au mur et réglages.</p>
+          <div class="tags"><span>Cuisine</span><span>Dressing</span><span>Fixation murale</span></div></div>
+      </article>
+      <article class="presta">
+        <div class="mat m-depan" aria-hidden="true"></div>
+        <div><h3>Dépannage électricité et plomberie</h3></div>
+        <div><p>Prise, interrupteur, luminaire, robinet, chasse d'eau, petite fuite. Les petites interventions qui bloquent un quotidien.</p>
+          <div class="tags"><span>Prises et luminaires</span><span>Robinetterie</span><span>Petites fuites</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="aa" id="realisations">
+  <div class="wrap">
+    <div class="intro">
+      <h2>Avant, après.</h2>
+      <p>Faites glisser pour voir la différence. Ici, un salon : murs repeints et parquet posé en chevrons.</p>
+    </div>
+    <div class="slider" style="--x:50%">
+      <div class="face avant" aria-hidden="true"></div>
+      <div class="face apres" aria-hidden="true"></div>
+      <div class="plinthe" aria-hidden="true"></div>
+      <div class="handle" aria-hidden="true"><i>&lt;&gt;</i></div>
+      <span class="lab l">Avant</span><span class="lab r">Après</span>
+      <span class="note">Maquette : vos photos de chantier prendront cette place</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après" oninput="this.parentNode.style.setProperty('--x', this.value + '%')">
+    </div>
+    <div class="gallery" aria-label="Galerie de réalisations">
+      <div>Photo de chantier<br>Salon, parquet chevrons</div>
+      <div>Photo<br>Chambre repeinte</div>
+      <div>Photo<br>Cloison placo</div>
+      <div>Photo<br>Cuisine montée</div>
+      <div>Photo<br>Couloir, sol vinyle</div>
+      <div>Photo<br>Faux plafond</div>
+    </div>
+  </div>
+</section>
+
+<section id="methode">
+  <div class="wrap">
+    <div class="intro">
+      <h2>Comment ça se passe.</h2>
+      <p>Trois étapes, sans surprise : vous savez ce qui est fait, quand, et à quel prix.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Vous envoyez vos photos</h3><p>Sur WhatsApp ou par le formulaire. Quelques photos, l'adresse et une description suffisent pour une première approche.</p></div>
+      <div class="step"><b>2</b><h3>Visite sur place, puis devis</h3><p>Relevé des mesures et vérification des supports. Devis détaillé ligne par ligne sous quelques jours, gratuit et sans engagement.</p></div>
+      <div class="step"><b>3</b><h3>Réalisation et réception</h3><p>Chantier protégé, planning tenu, logement rendu propre. Une visite de réception commune clôt les travaux.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="zone">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <h2>Zone d'intervention.</h2>
+        <p style="margin-top:20px;color:var(--gris)">Marseille et sa périphérie proche. Pour un chantier plus éloigné, une demande reste possible selon l'ampleur du projet.</p>
+      </div>
+      <ul class="villes">
+        <li>Marseille, tous arrondissements</li><li>Allauch</li><li>Plan-de-Cuques</li><li>Aubagne</li><li>La Penne-sur-Huveaune</li><li>Cassis</li><li>Carnoux-en-Provence</li><li>Gémenos</li><li>Les Pennes-Mirabeau</li><li>Vitrolles</li>
+      </ul>
+    </div>
+    <div class="avis">
+      <blockquote><div class="stars">★★★★★</div><p>Parquet posé en deux jours dans le salon et la chambre. Chantier propre, délais respectés.</p><footer>Exemple d'avis à remplacer par vos avis Google</footer></blockquote>
+      <blockquote><div class="stars">★★★★★</div><p>Peinture de tout l'appartement avant emménagement. Devis clair, dates respectées, résultat net.</p><footer>Exemple d'avis à remplacer par vos avis Google</footer></blockquote>
+      <blockquote><div class="stars">★★★★★</div><p>Intervention rapide pour une fuite, puis montage de la cuisine. Sérieux et disponible.</p><footer>Exemple d'avis à remplacer par vos avis Google</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <h2>Parlez-moi de votre projet.</h2>
+        <p style="color:var(--gris)">Quelques photos et une courte description suffisent. Vous êtes rappelé sous 48 h pour convenir d'une visite.</p>
+        <div class="ways">
+          <a class="way" href="https://wa.me/33600000000?text=Bonjour%2C%20je%20souhaite%20vous%20envoyer%20des%20photos%20de%20mon%20projet.">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4.1c1.7.7 2.4.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span>
+            <span><b>WhatsApp</b><small>Envoyez vos photos directement</small></span>
+          </a>
+          <a class="way" href="tel:+33600000000">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+            <span><b>06 00 00 00 00</b><small>Du lundi au samedi, 8 h à 19 h</small></span>
+          </a>
+          <a class="way" href="mailto:contact@roig-renovation.fr">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span><b>contact@roig-renovation.fr</b><small>Réponse sous 48 h</small></span>
+          </a>
+        </div>
+      </div>
+      <form onsubmit="event.preventDefault();alert('Maquette : le formulaire sera relié à votre boîte mail.')">
+        <div class="row">
+          <label>Nom <input type="text" name="nom" required></label>
+          <label>Téléphone <input type="tel" name="tel" required></label>
+        </div>
+        <label>Email <input type="email" name="email"></label>
+        <label>Type de travaux
+          <select name="type"><option>Pose de sol</option><option>Peinture</option><option>Placo et cloisons</option><option>Montage de meubles</option><option>Dépannage</option><option>Plusieurs travaux</option></select>
+        </label>
+        <label>Votre projet <textarea name="msg" placeholder="Surface, pièces concernées, délai souhaité..."></textarea></label>
+        <button class="btn btn-vert" type="submit" style="justify-content:center">Envoyer ma demande</button>
+        <small>Vos coordonnées servent uniquement à traiter votre demande.</small>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="brand"><i style="background:var(--chene)"></i>Roig Rénovation</div>
+      <p style="margin-top:10px">Artisan en rénovation intérieure, Marseille et alentours.<br>SIRET à compléter · RC Pro à compléter</p>
+    </div>
+    <ul>
+      <li><a href="#">Mentions légales</a></li>
+      <li><a href="#">Politique de confidentialité</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Facebook</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="tel" href="tel:+33600000000">Appeler</a>
+  <a href="https://wa.me/33600000000?text=Bonjour%2C%20je%20souhaite%20vous%20envoyer%20des%20photos%20de%20mon%20projet.">WhatsApp</a>
+</div>
+
+
+<script>
+(function(){
+  const surf=document.getElementById('surf'),out=document.getElementById('surfOut'),recap=document.getElementById('recap'),btn=document.getElementById('waBtn');
+  function maj(){
+    const t=document.querySelector('#typ input:checked').value,d=document.querySelector('#del input:checked').value;
+    out.textContent=surf.value+' m²';
+    const msg='Bonjour, je souhaite un devis pour : '+t.toLowerCase()+', environ '+surf.value+' m², '+d+'. Je vous joins des photos.';
+    recap.textContent=msg;
+    btn.href='https://wa.me/33600000000?text='+encodeURIComponent(msg);
+  }
+  surf.addEventListener('input',maj);
+  document.querySelectorAll('#typ input,#del input').forEach(i=>i.addEventListener('change',maj));
+  maj();
+})();
+</script>
+</body>
+</html>
